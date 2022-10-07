@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'package:pytorch_mobile/pytorch_mobile.dart';
-import 'package:pytorch_mobile/model.dart';
-import 'package:pytorch_mobile/enums/dtype.dart';
+import 'package:pytorch_mobile_v2/pytorch_mobile_v2.dart';
+import 'package:pytorch_mobile_v2/model.dart';
+import 'package:pytorch_mobile_v2/enums/dtype.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   String? _imagePrediction;
   List? _prediction;
   File? _image;
-  ImagePicker _picker = ImagePicker();
+  final ImagePicker _picker = ImagePicker();
 
   @override
   void initState() {
@@ -76,7 +76,9 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            _image == null ? Text('No image selected.') : Image.file(_image!),
+            _image == null
+                ? const Text('No image selected.')
+                : Image.file(_image!),
             Center(
               child: Visibility(
                 visible: _imagePrediction != null,
@@ -86,7 +88,7 @@ class _MyAppState extends State<MyApp> {
             Center(
               child: TextButton(
                 onPressed: runImageModel,
-                child: Icon(
+                child: const Icon(
                   Icons.add_a_photo,
                   color: Colors.grey,
                 ),
@@ -97,7 +99,7 @@ class _MyAppState extends State<MyApp> {
               style: TextButton.styleFrom(
                 backgroundColor: Colors.blue,
               ),
-              child: Text(
+              child: const Text(
                 "Run custom model",
                 style: TextStyle(
                   color: Colors.white,

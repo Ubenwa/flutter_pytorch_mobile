@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/services.dart';
-import 'package:pytorch_mobile/enums/dtype.dart';
+import 'package:pytorch_mobile_v2/enums/dtype.dart';
 
 const TORCHVISION_NORM_MEAN_RGB = [0.485, 0.456, 0.406];
 const TORCHVISION_NORM_STD_RGB = [0.229, 0.224, 0.225];
 
 class Model {
-  static const MethodChannel _channel = const MethodChannel('pytorch_mobile');
+  static const MethodChannel _channel = MethodChannel('pytorch_mobile_v2');
 
   final int _index;
 
