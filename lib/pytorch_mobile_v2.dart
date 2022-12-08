@@ -20,8 +20,12 @@ class PyTorchMobile {
   ///Sets pytorch model path and returns Model
   static Future<Model> loadModel(String path) async {
     String absPath = await _getAbsolutePath(path);
+    return loadLocalModel(absPath);
+  }
+
+  static Future<Model> loadLocalModel(String path) async {
     int index = await _channel
-        .invokeMethod("loadModel", {"absPath": absPath, "assetPath": path});
+        .invokeMethod("loadModel", {"absPath": path, "assetPath": path});
     return Model(index);
   }
 

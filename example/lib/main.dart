@@ -31,8 +31,8 @@ class _MyAppState extends State<MyApp> {
 
   //load your model
   Future loadModel() async {
-    String pathImageModel = "assets/models/resnet.pt";
-    String pathCustomModel = "assets/models/custom_model.pt";
+    String pathImageModel = "assets/models/resnet-lite.ptl";
+    String pathCustomModel = "assets/models/custom_model-lite.ptl";
     try {
       _imageModel = await PyTorchMobile.loadModel(pathImageModel);
       _customModel = await PyTorchMobile.loadModel(pathCustomModel);
