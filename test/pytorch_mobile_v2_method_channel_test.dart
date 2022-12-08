@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pytorch_mobile_v2/pytorch_mobile_v2_method_channel.dart';
 
 void main() {
-  MethodChannelPytorchMobileV2 platform = MethodChannelPytorchMobileV2();
+  MethodChannelPyTorchMobileV2 platform = MethodChannelPyTorchMobileV2();
   const MethodChannel channel = MethodChannel('pytorch_mobile_v2');
 
   TestWidgetsFlutterBinding.ensureInitialized();

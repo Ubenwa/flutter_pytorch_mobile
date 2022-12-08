@@ -1,5 +1,3 @@
-import 'pytorch_mobile_v2_platform_interface.dart';
-
 import 'dart:async';
 import 'dart:io';
 
@@ -7,10 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pytorch_mobile_v2/model.dart';
+import 'package:pytorch_mobile_v2/pytorch_mobile_v2_platform_interface.dart';
 
-class PytorchMobileV2 {
+class PyTorchMobileV2 {
   Future<String?> getPlatformVersion() {
-    return PytorchMobileV2Platform.instance.getPlatformVersion();
+    return PyTorchMobileV2Platform.instance.getPlatformVersion();
   }
 }
 

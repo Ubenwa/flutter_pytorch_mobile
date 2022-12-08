@@ -38,9 +38,9 @@ flutter:
     platforms:
       android:
         package: app.fungid.pytorch_mobile_v2
-        pluginClass: PytorchMobileV2Plugin
+        pluginClass: PyTorchMobileV2Plugin
       ios:
-        pluginClass: PytorchMobileV2Plugin
+        pluginClass: PyTorchMobileV2Plugin
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

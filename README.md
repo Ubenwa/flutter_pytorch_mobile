@@ -6,7 +6,7 @@ A flutter plugin for pytorch model inference, supported both for Android and iOS
 
 ### Installation
 
-To use this plugin, add `pytorch_mobile` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
+To use this plugin, add `pytorch_mobile_v2` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
 
 Create a `assets` folder with your pytorch model and labels if needed. Modify `pubspec.yaml` accoringly.
 
@@ -21,7 +21,7 @@ Run `flutter pub get`
 ### Import the library
 
 ```dart
-import 'package:pytorch_mobile/pytorch_mobile.dart';
+import 'package:pytorch_mobile_v2/pytorch_mobile_v2.dart';
 ```
 
 ### Load model

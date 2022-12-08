@@ -8,9 +8,11 @@ import 'package:pytorch_mobile_v2/pytorch_mobile_v2.dart';
 import 'package:pytorch_mobile_v2/model.dart';
 import 'package:pytorch_mobile_v2/enums/dtype.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -37,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       _imageModel = await PyTorchMobile.loadModel(pathImageModel);
       _customModel = await PyTorchMobile.loadModel(pathCustomModel);
     } on PlatformException {
-      print("only supported for android and ios so far");
+      throw Exception("Only supported for android and ios so far");
     }
   }
 

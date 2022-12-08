@@ -25,8 +25,8 @@ import com.facebook.soloader.nativeloader.SystemDelegate;
 
 import java.util.ArrayList;
 
-/** PytorchMobileV2Plugin */
-public class PytorchMobileV2Plugin implements FlutterPlugin, MethodCallHandler {
+/** PyTorchMobileV2Plugin */
+public class PyTorchMobileV2Plugin implements FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it

@@ -1,15 +1,18 @@
-#import "PytorchMobileV2Plugin.h"
+#import "PyTorchMobileV2Plugin.h"
 #import "TorchModule.h"
 #import "UIImageExtension.h"
 #import <LibTorch/LibTorch.h>
 
-@implementation PytorchMobileV2Plugin
+@implementation PyTorchMobileV2Plugin
+
+NSMutableArray *modules = [[NSMutableArray alloc] init];
+
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"pytorch_mobile_v2"
-            binaryMessenger:[registrar messenger]];
-  PytorchMobileV2Plugin* instance = [[PytorchMobileV2Plugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+    FlutterMethodChannel* channel = [FlutterMethodChannel
+                                     methodChannelWithName:@"pytorch_mobile_v2"
+                                     binaryMessenger:[registrar messenger]];
+    PyTorchMobileV2Plugin* instance = [[PyTorchMobileV2Plugin alloc] init];
+    [registrar addMethodCallDelegate:instance channel:channel];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
