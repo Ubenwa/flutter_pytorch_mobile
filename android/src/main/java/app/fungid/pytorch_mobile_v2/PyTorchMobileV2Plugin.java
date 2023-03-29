@@ -65,7 +65,6 @@ public class PyTorchMobileV2Plugin implements FlutterPlugin, MethodCallHandler {
   private void loadModel(MethodCall call, Result result) {
     try {
       String absPath = call.argument("absPath");
-      
       modules.add(LiteModuleLoader.load(absPath));
       result.success(modules.size() - 1);
     } catch (Exception e) {
