@@ -24,6 +24,8 @@ A new flutter plugin project.
   s.dependency 'LibTorch', '~> 2.1.0'
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
-      'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/LibTorch/install/include"'
+      'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/LibTorch/install/include"',
+      'CLANG_CXX_LIBRARY' => 'libc++',
++     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17'
   }
 end
