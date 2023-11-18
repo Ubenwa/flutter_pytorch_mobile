@@ -2,16 +2,16 @@ PODS:
   - Flutter (1.0.0)
   - image_picker_ios (0.0.1):
     - Flutter
-  - LibTorch (1.12.0):
-    - LibTorch/Core (= 1.12.0)
-  - LibTorch/Core (1.12.0):
+  - LibTorch (2.1.1):
+    - LibTorch/Core (= 2.1.1)
+  - LibTorch/Core (2.1.1):
     - LibTorch/Torch
-  - LibTorch/Torch (1.12.0)
+  - LibTorch/Torch (2.1.1)
   - path_provider_ios (0.0.1):
     - Flutter
   - pytorch_mobile_v2 (0.0.1):
     - Flutter
-    - LibTorch (~> 1.12.0)
+    - LibTorch (~> 2.1.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
