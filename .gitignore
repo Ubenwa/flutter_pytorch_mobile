@@ -5,3 +5,13 @@
 .pub/
 
 build/
+.cxx
+
+.gradle
+.idea
+.project
+.settings
+
+key.properties
+**/*.keystore
+**/*.jks
