@@ -21,7 +21,7 @@ A new flutter plugin project.
   s.ios.deployment_target = '12.0'
   s.static_framework = true
   s.public_header_files = 'Classes/**/*.h'
-  s.dependency 'LibTorch', '~> 2.1.1'
+  s.dependency 'LibTorch', '~> 2.1.0'
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 
     'DEFINES_MODULE' => 'YES', 
