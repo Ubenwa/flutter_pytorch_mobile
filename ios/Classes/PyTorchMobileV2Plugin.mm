@@ -53,8 +53,16 @@ NSMutableArray *modules = [[NSMutableArray alloc] init];
             try {
                 int len = (int) [data count];
                 float input[len];
-                for(int i = 0; i < len; i++) {
-                    input[i] = [ data[i] floatValue];
+                // for(int i = 0; i < len; i++) {
+                //     input[i] = [ data[i] floatValue];
+                // }
+                 for (int i = 0; i < len; i++) {
+                    if (i < [data count]) {
+                        input[i] = (float)[data[i] floatValue];
+                    } else {
+                        NSLog(@"Index out of bounds: %d", i);
+                        break;
+                    }
                 }
                 NSArray<NSNumber*>* output = [module predict:&input withShape:shape andDtype:dtype];
                 result(output);
