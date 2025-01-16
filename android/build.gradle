@@ -33,11 +33,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 31
     }
-    configurations {
-    all {
-        exclude group: 'org.pytorch', module: 'pytorch_android_lite'
-    }
-        }
+ 
 
   
     packagingOptions {
