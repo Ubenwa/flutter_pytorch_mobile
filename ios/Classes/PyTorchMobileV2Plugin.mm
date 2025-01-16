@@ -49,19 +49,60 @@ NSMutableArray *modules = [[NSMutableArray alloc] init];
             } catch (const std::exception& e) {
                 NSLog(@"PyTorchMobile: error parsing arguments!\n%s", e.what());
             }
-            
             try {
                 int len = (int) [data count];
-                float input[len];
-                for(int i = 0; i < len; i++) {
-                    input[i] = [ data[i] floatValue];
+                
+                // Dynamically allocate memory for the input array
+                float* input = (float*) malloc(len * sizeof(float));
+                
+                if (!input) {
+                    NSLog(@"Memory allocation failed");
+                    result(nil);
+                    return;
                 }
-                NSArray<NSNumber*>* output = [module predict:&input withShape:shape andDtype:dtype];
+                
+                // Fill the input array
+                for (int i = 0; i < len; i++) {
+                    input[i] = [data[i] floatValue];
+                }
+
+                // Call predict, passing the input array directly (not &input)
+                NSArray<NSNumber*>* output = [module predict:input withShape:shape andDtype:dtype];
+
+                // Free the allocated memory
+                free(input);
+
+                // Return the result
                 result(output);
             } catch (const std::exception& e) {
                 NSLog(@"PyTorchMobile: %s", e.what());
                 result(nil);
             }
+
+            
+//            try {
+//                int len = (int) [data count];
+//                float input[len];
+//                // for(int i = 0; i < len; i++) {
+//                //     input[i] = [ data[i] floatValue];
+//                // }
+//                 for (int i = 0; i < len; i++) {
+//                    if (i < [data count]) {
+//                        input[i] = (float)[data[i] floatValue];
+//                    } else {
+//                        NSLog(@"Index out of bounds: %d", i);
+//                        break;
+//                    }
+//                }
+//                
+//                NSArray<NSNumber*>* output = [module predict:&input withShape:shape andDtype:dtype];
+//                
+//                
+//                result(output);
+//            } catch (const std::exception& e) {
+//                NSLog(@"PyTorchMobile: %s", e.what());
+//                result(nil);
+//            }
 
             break;
         }
