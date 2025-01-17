@@ -14,7 +14,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 
 import org.pytorch.DType;
 import org.pytorch.IValue;
-// import org.pytorch.LiteModuleLoader;
+import org.pytorch.LiteModuleLoader;
 import org.pytorch.Module;
 import org.pytorch.Tensor;
 import org.pytorch.torchvision.TensorImageUtils;
@@ -65,8 +65,7 @@ public class PyTorchMobileV2Plugin implements FlutterPlugin, MethodCallHandler {
   private void loadModel(MethodCall call, Result result) {
     try {
       String absPath = call.argument("absPath");
-      // modules.add(LiteModuleLoader.load(absPath));
-      modules.add(Module.load(absPath));
+      modules.add(LiteModuleLoader.load(absPath));
       result.success(modules.size() - 1);
     } catch (Exception e) {
       String assetPath = call.argument("assetPath");
